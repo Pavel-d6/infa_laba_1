@@ -17,26 +17,23 @@ def main():
             expression = input("\nВведите выражение: ").strip()
 
             if expression.lower() in constants.EXIT_COMMANDS:
-                print("👋 До свидания!")
+                print("До свидания!")
                 break
 
             if not expression:
                 continue
 
             result = calc.calculate(expression)
-            print(f"✅ Результат: {result}")
+            print(f"Результат: {result}")
 
         except (
             calc.InvalidExpressionError,
             calc.DivisionByZeroError,
             calc.CalculatorError,
         ) as e:
-            print(f"❌ Ошибка: {e}")
-        except KeyboardInterrupt:
-            print("\n👋 До свидания!")
-            break
+            print(f"Ошибка: {e}")
         except Exception as e:
-            print(f"💥 {constants.ERROR_UNKNOWN.format(error=e)}")
+            print(f" {constants.ERROR_UNKNOWN.format(error=e)}")
 
 
 if __name__ == "__main__":

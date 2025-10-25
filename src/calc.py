@@ -84,7 +84,7 @@ def _is_number(token):
     try:
         float(token)
         return True
-    except ValueError:
+    except:
         return False
 
 
